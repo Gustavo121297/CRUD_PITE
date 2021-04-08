@@ -1,0 +1,103 @@
+<h3 mat-dialog-title>{{Titulo}}</h3>
+<form class="example-form" [formGroup]="PersonaForm">
+    <div mat-dialog-content>
+        <div class="row">
+
+            <div class="col-sm-2">
+                <mat-form-field>
+                    <mat-label>Nombre: </mat-label>
+                    <input matInput placeholder="Agregue Nombre" formControlName="nombre" value="">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="ml-5 col-sm-2">
+                <mat-form-field>
+                    <mat-label>Apellido Paterno: </mat-label>
+                    <input matInput placeholder="Agregar Apellido" formControlName="apeP" value="">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="ml-5 col-sm-2">
+                <mat-form-field>
+                    <mat-label>Apellido Materno: </mat-label>
+                    <input matInput placeholder="Agregar Apellido" formControlName="apeM" value="">
+                </mat-form-field>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="row">
+
+            <div class="col-sm-2">
+                <mat-form-field>
+                    <mat-label>Ciudad: </mat-label>
+                    <input matInput placeholder="Agregue Ciudad" formControlName="ciudad" value="">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="ml-5 col-sm-2">
+                <mat-form-field>
+                    <mat-label>Direccion </mat-label>
+                    <input matInput placeholder="Agregar Direccion" formControlName="direccion" value="">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="ml-5 col-sm-2">
+                <mat-form-field>
+                    <mat-label>Sexo:</mat-label>
+                    <mat-select name="food" formControlName="sexo">
+                        <mat-option *ngFor="let sexo of sexos" [value]="sexo.cveSexo">
+                            {{sexo.Sexo}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="row">
+
+            <div class="col-sm-2">
+                <mat-form-field>
+                    <mat-label>Rol</mat-label>
+                    <mat-select name="food" formControlName="rol">
+                        <mat-option *ngFor="let roles of roles" [value]="roles.value">
+                            {{roles.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="ml-5 col-sm-2 mt-2">
+                <button mat-button mat-dialog-close>Cancelar</button>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="ml-5 col-sm-2 mt-2">
+                <button mat-button color="primary" (click)="submit()" [disabled]="PersonaForm.invalid">Guardar</button>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</form>
